@@ -56,7 +56,7 @@ server {
 	}
 
         location /radarr {
-          proxy_pass http://localhost:7878/radar;
+          proxy_pass http://localhost:7878/radarr;
         }
 
         location /sabnzbd {
