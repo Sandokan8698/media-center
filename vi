@@ -1,0 +1,31 @@
+# /etc/systemd/system/rclone.service
+[Unit]
+Description=Google Drive (rclone)
+AssertPathIsDirectory=/mnt/google-drive
+After=plexdrive.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount \
+        --config=/root/.config/rclone/rclone.conf \
+        --allow-other \
+        --cache-tmp-upload-path=/tmp/rclone/upload \
+        --cache-chunk-path=/tmp/rclone/chunks \
+        --cache-workers=8 \
+        --cache-writes \
+        --cache-dir=/tmp/rclone/vfs \
+        --cache-db-path=/tmp/rclone/db \
+        --no-modtime \
+        --drive-use-trash \
+        --stats=0 \
+        --checkers=16 \
+        --bwlimit=40M \
+        --dir-cache-time=60m \
+        --allow-non-empty \
+        --cache-info-age=60m gdrive:/ /mnt/media
+ExecStop=/bin/fusermount -u /mnt/media
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
