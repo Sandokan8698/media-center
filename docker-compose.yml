@@ -77,6 +77,8 @@ services:
     volumes:
       - ${MOUNT_POINT}/sabnzbd:/config
       - ${DOWNLOADS}:/data  #optional
+      - ${MEDIA_PATH}:/mnt/media
+      - /mnt/scripts:/scripts  
       #- ${DOWNLOADS}/imcomplete:/incomplete-downloads #optional
     ports:
       - 8081:8080
