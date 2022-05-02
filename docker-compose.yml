@@ -38,7 +38,7 @@ services:
       - PUID=1000
       - TZ=${TIME_ZONE}
     volumes:
-      - ${MOUNT_POINT}/radarr:/config
+      - /mnt/config/radarr:/config
       - ${DOWNLOADS}:/data
       - ${MEDIA_PATH}/movies:/movies
   sonarr:
@@ -52,7 +52,7 @@ services:
       - PUID=1000
       - TZ=${TIME_ZONE}
     volumes:
-      - ${MOUNT_POINT}/sonarr:/config
+      - /mnt/config/sonarr:/config
       - ${MEDIA_PATH}/tv:/tv
       - ${DOWNLOADS}:/data
   jackett:
