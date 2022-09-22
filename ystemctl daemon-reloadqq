@@ -1,0 +1,12 @@
+[0;1;31mWarning:[0m The unit file, source configuration file or drop-ins of rclone.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+[0;1;32m●[0m rclone.service
+     Loaded: loaded (/etc/systemd/system/rclone.service; disabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Fri 2022-09-16 20:03:14 EDT; 5min ago
+   Main PID: 348654 (rclone)
+      Tasks: 10 (limit: 9480)
+     Memory: 49.8M
+     CGroup: /system.slice/rclone.service
+             └─348654 /usr/bin/rclone mount gdrive:/ /mnt/media --config=/home/denys/.config/rclone/rclone.conf --allow-other --local-no-check-updated --log-file=/var/log/rclone.log --cache-dir /tmp/rclone/vfs --no-modtime --allow-non-empty --vfs-cache-max-size 150G --vfs-cache-mode writes --vfs-read-chunk-size-limit off
+
+Sep 16 20:03:14 vmi868895.contaboserver.net systemd[1]: Started rclone.service.
+Sep 16 20:03:24 vmi868895.contaboserver.net systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185m/etc/systemd/system/rclone.service:1: Assignment outside of section. Ignoring.[0m

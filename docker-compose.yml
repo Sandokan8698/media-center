@@ -75,7 +75,7 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
     volumes:
-      - ${MOUNT_POINT}/sabnzbd:/config
+      - /mnt/config/sabnzbd:/config
       - ${DOWNLOADS}:/data  #optional
       - ${MEDIA_PATH}:/mnt/media
       - /mnt/scripts:/scripts  
